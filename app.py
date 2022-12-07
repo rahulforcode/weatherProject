@@ -1,12 +1,12 @@
 import json
 from flask import Flask, request
 from Helper import Helper
-from LocationStore import LocationStore
+from LocationMongoDBStore import LocationMongoDBStore
 
 
 app = Flask(__name__)
 
-locationStore = LocationStore()
+locationStore = LocationMongoDBStore()
 helper = Helper()
 
 @app.route("/weather_details", methods=["GET"])
